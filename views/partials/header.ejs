@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+          yelpcamp campgrounds 
+        </title>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheet/app.css">
+    </head>
+    <body>
+        
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <div class="ui fixed inverted menu">
+           <div class="ui  container">
+               <ul class="navbar-nav mr-auto">
+               <li ><div class="header item"><i class="code icon"></i>Blog Site</div></li>
+                
+                <li>
+                    <div>
+                       <a href="/" class="item ">Home</a> 
+                    </div>
+                </li>
+                <li><a href="/campgrounds/new" class="item">New Post</a></li>
+                  </ul>   
+               <div class="right menu">
+                  <ul class="navbar-nav mr-auto">
+                  <%  if(!currentUser){  %>
+                   <li> <a href="/register" class="item">Sign Up</a></li>
+                   <li> <a href="/login" class="item">Login</a></li>
+                  <% } else {  %>
+                            <div>
+                                   <li class="item" ><%= currentUser.username  %></li>  
+                            </div>
+                            <div>
+                                   <li><div><a href="/logout" class="item">Logout</a></div></li>
+                            </div>
+                  <% }  %>
+                  </ul>
+               </div>
+               
+           </div>
+       </div>
+    </div>
+</nav>    
+     
+       
+       <div class="container main">
+           <%  if(error && error.length> 0 ){ %>
+              <div class="alert alert-danger"  role="alert">
+                <%= error %>
+              </div>
+           <% } %>
+           <%  if(success && success.length > 0){ %>
+              <div class="alert alert-success"  role="alert">
+                <%= success %>
+              </div>
+           <% } %>      
+       </div>
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+         crossorigin="anonymous"> 
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+         crossorigin="anonymous">
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+         crossorigin="anonymous">
+      </script>
+      
+     
+

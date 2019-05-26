@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+  <div class="ui  container">
+<h3 id="newCampgrounds">Enter new comment</h3>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Comments </div>
+    
+    
+<form  action="/campgrounds/<%= campgrounds._id%>/comments" method="POST" class="ui form">
+    
+       
+        <div class="field">
+             <div class="eight wide field">
+                <label>Comment</label>
+                <input type="text" name="comment[text]" placeholder="enter comment">
+            </div>
+        </div>
+       
+    <button class="ui inverted green button ">Submit</button>
+</form>
+</div>
+</div>
+
+<% include ../partials/footer %>

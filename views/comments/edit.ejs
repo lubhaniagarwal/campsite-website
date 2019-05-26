@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+  <div class="ui  container">
+<!--<h3 id="newCampgrounds">Edit comments</h3>-->
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit Comment </div>
+    
+    
+<form  action="/campgrounds/<%= campgrounds_id%>/comments/<%= comment._id %>?_method=PUT"  method="POST" class="ui form">
+    
+       
+        <div class="field">
+             <div class="eight wide field">
+                <label>Previous Comment</label>
+                <input type="text" name="comment[text]" value="<%= comment.text %>">
+            </div>
+        </div>
+       
+    <button class="ui inverted green button ">Submit</button>
+</form>
+</div>
+</div>
+
+<% include ../partials/footer %>

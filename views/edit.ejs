@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+  <div class="ui  container">
+<h3>Edit Campground</h3>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit Campground <%= campgrounds.name %></div>
+    
+    
+<form  action="/campgrounds/<%= campgrounds._id %>?_method=PUT" method="POST" class="ui form">
+    
+        <div class="fields">
+            <div class="eight wide field">
+                <label>Campground Name</label>
+                <input type="text" name="camp[name]" value="<%= campgrounds.name %>">
+            </div>
+        </div>
+        <div class="fields">
+            <div class="eight wide field">
+                <label>Price</label>
+                <input type="text" name="camp[price]" value="<%= campgrounds.price %>" >
+            </div>
+        </div>
+        <div class="field">
+             <div class="eight wide field">
+                <label>Image</label>
+                <input type="text" name="camp[image]" value="<%= campgrounds.image %>">
+            </div>
+        </div>
+        <div class="field">
+             <div class="eight  wide field">
+                <label>Description</label>
+                 <textarea  name="camp[description]" ><%= campgrounds.description %></textarea>
+            </div>
+        </div>
+    <button class="ui inverted green button ">Submit</button>
+    <a  id="content" href="/campgrounds">Go Back</a>
+</form>
+  
+</div>
+
+</div>
+
+<% include ./partials/footer %>
